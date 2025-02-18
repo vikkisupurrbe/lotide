@@ -2,18 +2,18 @@
 const assertEqual = function(actual, expected) {
 
   if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+    return `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
   } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
+    return `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
   }
 
 };
 
 
 //testing function
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-assertEqual("apple", "apple");
-assertEqual("apple", "orange");
-assertEqual(501, 501);
-assertEqual(501, 301);
+console.log(assertEqual("Lighthouse Labs", "Bootcamp"));
+console.log(assertEqual(1, 1));
+console.log(assertEqual("apple", "apple"));
+console.log(assertEqual("apple", "orange"));
+console.log(assertEqual(501, 501));
+console.log(assertEqual(501, 301));
