@@ -5,9 +5,9 @@
 const assertArraysEqual = function(arr1, arr2) {
 
   if (eqArrays(arr1, arr2)) {
-    return `✅✅✅ Assertion Passed: ${JSON.stringify(arr1)} === ${JSON.stringify(arr2)}`;
+    console.log(`✅✅✅ Assertion Passed: ${JSON.stringify(arr1)} === ${JSON.stringify(arr2)}`);
   } else {
-    return `🛑🛑🛑 Assertion Failed: ${JSON.stringify(arr1)} !== ${JSON.stringify(arr2)}`;
+    console.log(`🛑🛑🛑 Assertion Failed: ${JSON.stringify(arr1)} !== ${JSON.stringify(arr2)}`);
   }
 
 };
@@ -42,8 +42,8 @@ const eqArrays = function(arr1, arr2) {
 };
 
 // testing
-console.log(assertArraysEqual([1, 2, 3], [1, 2, 3]));
-console.log(assertArraysEqual([1, 2, 4], [1, 2, 3]));
-console.log(assertArraysEqual([1, 2], [1, 2, 3]));
-console.log(assertArraysEqual([], []));
+assertArraysEqual([1, 2, 3], [1, 2, 3]);
+assertArraysEqual([1, 2, 4], [1, 2, 3]);
+assertArraysEqual([1, 2], [1, 2, 3]);
+assertArraysEqual([], []);
 
