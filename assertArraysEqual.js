@@ -2,12 +2,12 @@
 // input: boolean, true or false from the function eqArrays
 // output: a string, showing the message, pass if two arrays are the same, fail if not
 
-const assertArraysEqual = function(result) {
+const assertArraysEqual = function(arr1, arr2) {
 
-  if (result) {
-    return "✅✅✅ Assertion Passed: The two arrays are the same.";
+  if (eqArrays(arr1, arr2)) {
+    return `✅✅✅ Assertion Passed: ${JSON.stringify(arr1)} === ${JSON.stringify(arr2)}`;
   } else {
-    return "🛑🛑🛑 Assertion Failed: The two arrays are different";
+    return `🛑🛑🛑 Assertion Failed: ${JSON.stringify(arr1)} !== ${JSON.stringify(arr2)}`;
   }
 
 };
@@ -42,7 +42,8 @@ const eqArrays = function(arr1, arr2) {
 };
 
 // testing
-console.log(assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3])));
-console.log(assertArraysEqual(eqArrays([1, 2, 4], [1, 2, 3])));
-console.log(assertArraysEqual(eqArrays([1, 2], [1, 2, 3])));
-console.log(assertArraysEqual(eqArrays([], [])));
+console.log(assertArraysEqual([1, 2, 3], [1, 2, 3]));
+console.log(assertArraysEqual([1, 2, 4], [1, 2, 3]));
+console.log(assertArraysEqual([1, 2], [1, 2, 3]));
+console.log(assertArraysEqual([], []));
+
