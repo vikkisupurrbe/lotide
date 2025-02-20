@@ -31,27 +31,23 @@ const eqArrays = function(arr1, arr2) {
 // steps:
 // 1. Start
 // 2. initilize with an empty array, newArr [] (so that we don't alter the source array)
-//    copy all elements from srcArr to newArr by looping through each element in srcArr and push them into newArr
-// 3. loop through the source array to see if there is an exact match to the itemsToRemove array
-//    pop the exact same element in the newArr
-//    store the result array in the new array
+// 3. Loop through all the elements in the srcArr
+//    If an element is not included in the itemsToRemove array, meaning that we need to keep it, push to the newArr
 // 4. Check if the source array is alter by using assertArraysEqual
 // 5. End
 
-const without = function (srcArr, itemsToRemoveArr) {
+const without = function(srcArr, itemsToRemoveArr) {
 
   let newArr = [];
 
-  for (let element of srcArr) {
-    newArr.push(element);
-  }
-
-  for (let item of itemsToRemoveArr) {
-    if (srcArr.includes(item)) {
-      newArr.pop(item);
+  for (let i = 0; i < srcArr.length; i++) {
+    if (!itemsToRemoveArr.includes(srcArr[i])) {
+      newArr.push(srcArr[i]);
     }
   }
-  console.log (newArr);
+
+  return newArr;
+
 };
 
 
@@ -63,8 +59,8 @@ without(words, ["lighthouse"]); // no need to capture return value for this test
 assertArraysEqual(words, ["hello", "world", "lighthouse"]);
 
 // testing without()
-without([1, 2, 3], [1]); // => [2, 3]
-without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
-without([1, 2, 3], []);
-without([], [1, 2, 3]);
-without([], []);
+console.log(without([1, 2, 3], [1])); // => [2, 3]
+console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
+console.log(without([1, 2, 3], [])); // => [1, 2, 3]
+console.log(without([], [1, 2, 3])); // => []
+console.log(without([], [])); //
