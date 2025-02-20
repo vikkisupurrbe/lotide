@@ -44,6 +44,7 @@ const mid = function (baseArr) {
   let midArr = [];
 
   if (baseArr.length <= 2) {
+    return [];
   } else {
       if (baseArr.length % 2 !== 0) {
         midArr.push(baseArr[(baseArr.length - 1) / 2]);
