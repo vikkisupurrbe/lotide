@@ -59,9 +59,9 @@ without(words, ["lighthouse"]); // no need to capture return value for this test
 assertArraysEqual(words, ["hello", "world", "lighthouse"]);
 
 // testing without()
-console.log(without([1, 2, 3], [1])); // => [2, 3]
-console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
-console.log(without([1, 2, 3], [])); // => [1, 2, 3]
-console.log(without([], [1, 2, 3])); // => []
-console.log(without([], [])); //
-console.log(without([1, 2, 3], [1, 1])); // => [2, 3]
+// Improved test cases for `without`
+assertArraysEqual(without([1, 2, 3], [1]), [2, 3]); // ✅ should PASS
+assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]); // ✅ should PASS
+assertArraysEqual(without([1, 2, 3], []), [1, 2, 3]); // ✅ should PASS
+assertArraysEqual(without([], [1, 2, 3]), []); // ✅ should PASS
+assertArraysEqual(without([], []), []); // ✅ should PASS
