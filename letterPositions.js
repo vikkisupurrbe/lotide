@@ -66,6 +66,5 @@ const letterPositions = function (sentence) {
 // for example. "hello" will return {h: [0], e: [1], l: [2, 3], o: [4]}
 console.log(letterPositions("hello"));
 assertArraysEqual(letterPositions("hello").e, [1]); //assertion check should pass
-assertArraysEqual(letterPositions("hello").e, [1]); 
 assertArraysEqual(letterPositions("hello").l, [2, 3]); 
 assertArraysEqual(letterPositions("hello").o, [4]);
