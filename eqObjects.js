@@ -48,8 +48,6 @@ const eqObjects = function(object1, object2) {
   }
 
   // check if equal array check is needed
-
-
   // check if each key in object1 exists in object2 and has the same value
   for (let key of keysOfObj1) {
 
