@@ -3,9 +3,9 @@
 const assertEqual = function(actual, expected) {
 
   if (actual === expected) {
-    return `✅✅✅ Assertion Passed: ${actual} === ${expected}`;
+    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`) ;
   } else {
-    return `🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`;
+    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`) ;
   }
 
 };
@@ -22,15 +22,11 @@ const assertEqual = function(actual, expected) {
 // 5.Iterate through the array, all the letters show up in the string will start with 1, increment by 1 if they show up again
 // 6.End
 
-const countLetters = function (list) {
-
-  if (list.length === 0){
-    return undefined;
-  }
+const countLetters = function (sentence) {
 
   let results = {};
 
-  for (const letter of list) {
+  for (const letter of sentence) {
    
       if (results[letter]) {
         results[letter] += 1
@@ -44,17 +40,10 @@ const countLetters = function (list) {
 
 };
 
-const letterDeconstruct= function (sentence) {
-  
-  let letterList = sentence.split('')
-
-  return letterList;
-
-}
 
 // test, check if the number of times a letter shows up matches what we expected
-console.log(letterDeconstruct('egg'));
-console.log(letterDeconstruct(''));
-console.log(countLetters(letterDeconstruct('egg')));
-console.log(assertEqual(countLetters(letterDeconstruct('egg'))['e'], 1));
-console.log(assertEqual(countLetters(letterDeconstruct('')), undefined));
+console.log(countLetters("egg"));  // { e: 1, g: 2 }
+console.log(countLetters(""));  // {} (empty object)
+console.log(countLetters("Hello apple!"));
+assertEqual(countLetters("egg")["e"], 1);
+assertEqual(countLetters("Hello apple!")["p"], 2);
