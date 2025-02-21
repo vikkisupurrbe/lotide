@@ -18,13 +18,16 @@ const assertEqual = function(actual, expected) {
 // 3.Check the given string
 //     if string is empty, return undefined
 //     if string is not empty, proceed
-// 4.Deconstruct the string into individual strings containing just one letter, put them into an array called letterList, e.g: const letterList = "egg".split("");
-// 5.Iterate through the array, all the letters show up in the string will start with 1, increment by 1 if they show up again
+// 4.Loop over the string, all the characters show up in the string will start with 1, increment by 1 if they show up again
 // 6.End
 
 const countLetters = function (sentence) {
 
   let results = {};
+
+  if (sentence === '') {
+    return undefined
+  }
 
   for (const letter of sentence) {
    
