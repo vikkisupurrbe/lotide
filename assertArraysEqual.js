@@ -1,7 +1,7 @@
 // function implementation
 // input: boolean, true or false from the function eqArrays
 // output: a string, showing the message, pass if two arrays are the same, fail if not
-
+const eqArrays = require("./eqArrays");
 const assertArraysEqual = function(arr1, arr2) {
 
   if (eqArrays(arr1, arr2)) {
@@ -25,21 +25,6 @@ const assertArraysEqual = function(arr1, arr2) {
 // if it's a perfect match, return true
 //4.End
 
-const eqArrays = function(arr1, arr2) {
-  
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-    
-  }
-  return true;
-  
-};
 
 module.exports = assertArraysEqual;
 
