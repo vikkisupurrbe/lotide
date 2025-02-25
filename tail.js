@@ -28,5 +28,5 @@ tail(words); // no need to capture the return value since we are not checking it
 assertEqual(words.length, 3); // original array should still have 3 elements!
 
 // New test cases for edge cases
-assertEqual(tail([42]), []);
-assertEqual(tail([]), []);
+assertEqual(tail([42]).length, 0);
+assertEqual(tail([]).length, 0);
