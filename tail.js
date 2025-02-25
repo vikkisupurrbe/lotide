@@ -12,10 +12,6 @@ const assertEqual = function(actual, expected) {
 // function implementation
 const tail = function(arr) {
 
-  if (arr.length <= 1) {
-    return [];
-  } 
-
   return arr.slice(1);
 
 };
@@ -32,5 +28,5 @@ tail(words); // no need to capture the return value since we are not checking it
 assertEqual(words.length, 3); // original array should still have 3 elements!
 
 // New test cases for edge cases
-console.log(tail([42]));
-console.log(tail([]));
+assertEqual(tail([42]), []);
+assertEqual(tail([]), []);
