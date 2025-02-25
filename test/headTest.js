@@ -20,7 +20,7 @@ describe("#head", () => {
   });
 
   it("returns undefined for 'Hello'", () => {
-    assert.strictEqual(head("Hello", undefined)); 
+    assert.strictEqual(head("Hello"), undefined); 
   });
 });
 
